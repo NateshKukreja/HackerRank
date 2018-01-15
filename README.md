@@ -1,2 +1,3 @@
 # HackerRank
-Creating repository for HackerRank challenges that I’ve completed 
+
+Repository will include challenges I've completed on HackerRank

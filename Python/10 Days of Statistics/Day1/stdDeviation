@@ -1,0 +1,25 @@
+import math
+
+def stdDeviation(values, size):
+    mean = 0
+    for val in values:
+        mean +=val
+    mean = mean/size
+    
+    sigma = 0
+    for val in values:
+        sigma +=(val-mean)**2
+    sigma = sigma/size
+    stdDev = math.sqrt(sigma)
+    return(round(stdDev, 1))
+
+size = input()
+inputVal = input().split()
+
+size = int(size)
+
+values = []
+for val in inputVal:
+    values.append(int(val))
+    
+print(stdDeviation(values, size))

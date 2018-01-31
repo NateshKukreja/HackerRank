@@ -16,7 +16,5 @@ for i in value:
 
 for i in occurance:
     occurances.append(int(i))
-
-
     
 print(weightedMean(int(size), values, occurances))

@@ -1,76 +1,22 @@
-import math
+def median(arr):
+    if len(arr) % 2 == 0:
+        temp = arr[(len(arr) // 2) - 1]
+        return (temp + arr[(len(arr) // 2)]) / 2
+    return arr[(len(arr) // 2)]
 
-def quartiles(size, values):
-    if(size%2 != 0):
-    
-        split = math.floor(size/2)
-        firstHalf = []
-        secondHalf = []
-    
-        for i in range(split):
-            firstHalf.append(values[i])
-        
-        for i in range(split+1, size):
-            secondHalf.append(values[i])
-        
-        firstHalf.sort()
-        meanFH = 0
 
-        if(len(firstHalf)%2==0):
-            meanFH+=(firstHalf[int(len(firstHalf)/2)] + firstHalf[int((len(firstHalf)/2))-1])
-            meanFH = meanFH/2
-        else:
-            meanFH+=firstHalf[math.floor(len(firstHalf)/2)]
+size = int(input())
+x = [int(val) for val in input().split()]
+x = sorted(x)
 
-        secondHalf.sort()
-        meanSH = 0
-        if(len(secondHalf)%2 == 0):
-            meanSH+=(secondHalf[int(len(secondHalf)/2)] + secondHalf[int(len(secondHalf)/2)-1])
-            meanSH = meanSH/2        
-        else:
-            meanSH += secondHalf[math.floor(int(len(secondHalf)/2))]
-        print(int(meanFH))
-        print(values[math.floor(size/2)])
-        print(int(meanSH))
+#print the mean of the values before the middle value
+print(int(median(x[:(size // 2)])))
 
-    else:
-        mean+=(values[size/2]+values[(size/2)-1])
-        mean = mean/2
-        split = math.floor(size/2)
-        firstHalf = []
-        secondHalf = []
-    
-        for i in range(split):
-            firstHalf.append(values[i])
-        
-        for i in range(split+1, size):
-            secondHalf.append(values[i])
-        
-        firstHalf.sort()
-        meanFH = 0
-        if(len(firstHalf)%2==0):
-            meanFH+=(firstHalf[int(len(firstHalf)/2)] + firstHalf[(int(len(firstHalf)/2))-1])
-            meanFH = meanFH/2
-        else:
-            meanFH+=firstHalf[math.floor(int(len(firstHalf))/2)]
+#print the mean
+print(int(median(x)))
 
-        secondHalf.sort()
-        meanSH = 0
-        if(len(secondHalf)%2 == 0):
-            meanSH+=(secondHalf[int(len(secondHalf)/2)] + secondHalf[(int(len(secondHalf)/2))-1])
-            meanSH = meanSH/2        
-        else:
-            meanSH += secondHalf[math.floor(int(len(secondHalf)/2))]
-        print(int(meanFH))
-        print(values[math.floor(size/2)])
-        print(int(meanSH))
-
-                     
-size = input()
-inputVal = input().split()
-
-values = []
-for val in inputVal:
-    values.append(int(val))
-size = int(size)
-quartiles(size, values)
+#check the lenght of the 
+if size % 2 == 0:
+    print(int(median(x[(size // 2):])))
+else:
+    print(int(median(x[(size // 2) + 1:])))

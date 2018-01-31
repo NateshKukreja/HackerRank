@@ -45,3 +45,4 @@ lis.sort()
 mean(size, lis)
 median(size, lis)
 (mode(lis))
+

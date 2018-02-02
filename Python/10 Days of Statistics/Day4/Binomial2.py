@@ -1,10 +1,12 @@
 import math
 
-def fact(n):
-    return 1 if n == 0 else n*fact(n-1)
-
-def comb(n, x):
-    return fact(n) / (fact(x) * fact(n-x))
-
 def b(k, n, p):
-    return (math.factorial(n)/(math.factorial(k)*math.factorial(n-k))) * p**x * (1-p)**(n-x)
+    return ((math.factorial(n)/(math.factorial(k)*math.factorial(n-k))) * p**k * (1-p)**(n-k))
+
+s = input().split()
+
+p = int(s[0])
+n = int(s[1])
+
+print(round(sum([b(i, n, p/100) for i in range(3)]), 3))
+print(round(1-sum([b(i, n, p/100) for i in range(0, 2)]), 3))
